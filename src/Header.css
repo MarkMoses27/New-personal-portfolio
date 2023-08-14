@@ -1,0 +1,132 @@
+/* Header.css */
+
+/* Basic header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center vertically */
+  background-color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: "Roboto", sans-serif;
+}
+
+/* Styles for the logo link */
+.logo-link {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+/* Styles for the name "MarkMoses" */
+.logo-link > a {
+  position: relative;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #008000;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+/* Center the name on logo link during media queries */
+@media (max-width: 768px) {
+  .logo-link {
+    justify-content: center;
+  }
+}
+
+/* Animation on hover for the name "MarkMoses" */
+.logo-link > a:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Dots around the name "MarkMoses" */
+.logo-link > a::before,
+.logo-link > a::after {
+  content: ".";
+  position: absolute;
+  font-size: 3rem;
+  color: #008000;
+  opacity: 0.2;
+}
+
+.logo-link > a::before {
+  left: -1.5rem;
+}
+
+.logo-link > a::after {
+  right: -1.5rem;
+}
+
+/* Styles for the navigation links */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 50px 0 0;
+  padding: 10px;
+}
+
+nav li {
+  margin-right: 1.5rem;
+}
+
+/* Styles for the links inside the navigation */
+nav a {
+  text-decoration: none;
+  color: green;
+  font-size: 14px;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+  font-weight: 500;
+}
+
+/* Hover effect for the navigation links */
+nav a:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Media query for menu icons visibility and toggle button style */
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: block;
+    margin-left: 10px;
+    
+    background-color: #008000;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.2rem;
+    position: absolute; /* Position the toggle icon */
+    top: 10px;
+    right: 20px;
+  }
+
+  .menu-toggle i {
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0;
+    background-color: #333;
+  }
+
+  .nav-wrapper.open ul {
+    display: flex;
+  }
+
+  .nav-wrapper.open .menu-toggle {
+    background-color: #fff;
+    color: #008000;
+  }
+}
